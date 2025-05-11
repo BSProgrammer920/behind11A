@@ -1,122 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/subject.css">
+  <title>Akaun</title>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+  </script>
 
-<section class="max-w-3xl mx-auto p-6 bg-white rounded-xl shadow mt-8">
-  <div class="hover-underline">Chemistry秘籍</div>
+  <!-- Instruction Message with Icon -->
+ <!-- Instruction Message with Icon -->
+  <div id="instruction" class="instruction-message">
+    <img src="/ionicons/information-circle-outline.svg" alt="Tips icon" class="icon-svg">
+    <p>Please click the icons at the upper right corner.</p>
+  </div>
 
+
+  <!-- Content Blocks for Tips and Resources -->
+  <div id="tips" class="content-block" style="display: none;">
+    <h2>Tips Section</h2>
+    <p>This is the Tips content.</p>
+  </div>
   
-  <p class="mb-4">
-    ✅ 注重 understanding 而不是死背公式<br>
-    ✅ 多做结构题和 past year<br>
-    ✅ 分类总结每一章的常见问法和关键词
-  </p>
-  <div class="space-y-2">
-    <a href="../files/chemistry-notes.pdf" class="text-blue-500 underline">📄 下载笔记 PDF</a><br>
-    <a href="https://t.me/soalanpercubaanspm" target="_blank" class="text-blue-500 underline">🔗 外部学习链接</a>
+  <div id="resources" class="content-block" style="display: none;">
+    <h2>Resources Section</h2>
+    <p>This is the Resources content.</p>
   </div>
 
-  <div class="card">
-    <div class="card-inner">
-      <div class="card-front">Way To Revise</div>
-      <div class="card-back">✅ 注重 understanding 而不是死背公式<br>
-        ✅ 多做结构题和 past year<br>
-        ✅ 分类总结每一章的常见问法和关键词</div>
-    </div>
-  </div>
+  <script>
+    function showContent(section) {
+      // Hide the instruction message when the user clicks on an icon
+      document.getElementById('instruction').style.display = 'none';
 
-</section>
+      // Hide both sections
+      document.getElementById('tips').style.display = 'none';
+      document.getElementById('resources').style.display = 'none';
 
-<style>
-  .chemistry{
-    text-align: center;
-  }
-</style>
-
+      // Show the selected section
+      document.getElementById(section).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
 
 
-<style>
-  body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #fafafa;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-.hover-underline {
-  font-size: 2rem;
-  color: #000000;
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  font-size: 100px;
-}
-
-.hover-underline::after,
-.hover-underline::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, #ff0000, #00ffff);
-  bottom: -5px;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s ease-out;
-}
-
-.hover-underline::before {
-  top: -5px;
-  transform-origin: left;
-}
-
-.hover-underline:hover::after,
-.hover-underline:hover::before {
-  transform: scaleX(1);
-}
-
-.card {
-  width: 200px;
-  height: 250px;
-  margin: 1rem auto;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.5rem;
-}
-
-.card-front {
-  background: white;
-  border: 1px solid #e5e7eb;
-}
-
-.card-back {
-  background: #8b5cf6;
-  color: white;
-  transform: rotateY(180deg);
-}
-
-</style>

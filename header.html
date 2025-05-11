@@ -1,0 +1,236 @@
+<div class="nav-container">
+  <div class="logo">
+    <img src="/images/cropped_logo.png" alt="Logo" style="height: 48px;">
+  </div>
+
+  <div class="nav-center">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/motivation.html">Motivation</a></li>
+      <li><a href="/index.html#cardd">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <ul class="icon-menu">
+    <li class="icon-item" onclick="showContent('tips')">
+      <img src="/ionicons/bulb-outline.svg" alt="Tips icon" class="icon-svg">
+      <span class="title">Tips</span>
+    </li>
+
+    <li class="icon-item" onclick="showContent('resources')">
+      <img src="/ionicons/book-outline.svg" alt="Resources icon" class="icon-svg">
+      <span class="title">Resources</span>
+    </li>
+  </ul>
+</div>
+
+
+
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+    .icon-svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  .icon-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+  }
+
+  .nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-center ul {
+    display: flex;
+    gap: 24px;
+  }
+
+  .nav-center ul li {
+    list-style: none;
+  }
+
+  .nav-center ul li a {
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(59, 130, 246);
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.5s;
+    z-index: 1;
+  }
+
+  .nav-center ul li a::before,
+  .nav-center ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+  }
+
+  .nav-center ul li a::before {
+    top: 0;
+    border-top: 2px solid rgb(59, 130, 246);
+    border-bottom: 2px solid rgb(59, 130, 246);
+    transform: scaleY(2);
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .nav-center ul li a::after {
+    top: 2px;
+    background-color: rgb(59, 130, 246);
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+  }
+
+  .nav-center ul li a:hover {
+    color: #fff;
+  }
+
+  .nav-center ul li a:hover::before {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .nav-center ul li a:hover::after {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .icon-menu {
+    display: flex;
+    gap: 25px;
+    margin-left: auto;
+  }
+
+  .icon-menu li {
+    --i:#a955ff;
+    --j:#ea51ff;
+    position: relative;
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+
+  .icon-menu li::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 60px;
+    background: linear-gradient(45deg, var(--i), var(--j));
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .icon-menu li::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    background: linear-gradient(45deg, var(--i), var(--j));
+    transition: 0.5s;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .icon-menu li:hover {
+    width: 180px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+  }
+
+  .icon-menu li:hover::before {
+    opacity: 1;
+  }
+
+  .icon-menu li:hover::after {
+    opacity: 0.5;
+  }
+
+  .icon-menu li ion-icon {
+    color: #777;
+    font-size: 1.75em;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+  }
+
+  .icon-menu li:hover ion-icon {
+    transform: scale(0);
+    color: #fff;
+    transition-delay: 0s;
+  }
+
+  .icon-menu li span {
+    position: absolute;
+  }
+
+  .icon-menu li .title {
+    color: #fff;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transform: scale(0);
+    transition: 0.5s;
+    transition-delay: 0s;
+  }
+
+  .icon-menu li:hover .title {
+    transform: scale(1);
+    transition-delay: 0.25s;
+  }
+
+  body {
+  background-color: #dfe6e9;
+  padding-top: 80px; /* Adjust based on your nav height */
+}
+
+</style>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

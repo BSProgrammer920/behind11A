@@ -5,16 +5,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>我的11A+秘籍</title>
+  <link rel="stylesheet" href="styles.css">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="auth.js" defer></script>
-  <meta name="google-site-verification" content="9Oygr1XhgvtH3mH5RF6kbRxNeMqpeubZNHTEDANGcmw" />
+
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+
+    crossorigin="anonymous">
+  
 </head>
 <body class="bg-gray-50 text-gray-900">
+  
   <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: white; display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; border-bottom: 1px solid #ddd;">
+  
+    <!-- Logo on the left -->
     <div>
       <img src="/images/cropped_logo.png" alt="Logo" style="height: 48px;">
     </div>
-    <div style="display: flex; gap: 16px; align-items: center;">
+  
+    <!-- Right side items -->
+    <div style="display: flex; align-items: center; gap: 24px;">
+      
+      <!-- Nav links first -->
+      <ul style="display: flex; list-style: none; gap: 10px; margin: 0; padding: 0;">
+        <li><a href="#">Home</a></li>
+        <li><a href="motivation.html">Motivation</a></li>
+        <li><a href="#contactus">Contact Us</a></li>
+      </ul>
+  
+      <!-- Menu button after nav -->
       <div class="dropdown">
         <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Menu</button>
         <div class="dropdown-content">
@@ -22,10 +44,17 @@
           <a href="#subjectt">Subjects</a>
         </div>
       </div>
+  
+      <!-- Login button -->
       <button id="loginBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Login with Google</button>
-      <button id="moreBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">More</button>
+  
+      <!-- User Info -->
+      <div id="userInfo" style="display: none;">
+        <img id="userPic" style="width:40px; height:40px; border-radius:50%;" />
+      </div>
     </div>
   </div>
+  
   
   <div style="padding-top: 70px;">
   <section id="pic">
@@ -36,18 +65,12 @@
     
     
   
-    
-    
-    
     <section id="subjectt">
       <span style="display: block; text-align: center; font-size: 60px; font-weight: bold;">
         Subjects
       </span>
     </section>
-  
-    
-  
-  
+
     <main class="p-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- 🔁 12个科目 -->
       <a href="subjects/chemistry.html" class="component-card"> <img src="images/chemistry.png" alt="Chemistry"> <h2>Chemistry</h2> </a>
@@ -58,171 +81,137 @@
       <a href="subjects/math.html" class="component-card"> <img src="images/math.jpg" alt="Math"> <h2>Mathematics</h2> </a>
       <a href="subjects/addmath.html" class="component-card"> <img src="images/add.jpeg" alt="AddMath"> <h2>Add Math</h2> </a>
       <a href="subjects/akaun.html" class="component-card"> <img src="images/akaun.jpeg" alt="Akaun"> <h2>Akaun</h2> </a>
-      <a href="subjects/moral.html" class="component-card"> <img src="images/moral.jpg" alt="Moral"> <h2>Moral</h2> </a>
+      <a href="subjects/moral.html" class="component-card"> <img src="images/moralll.jpg" alt="Moral"> <h2>Moral</h2> </a>
       <a href="subjects/sejarah.html" class="component-card"> <img src="images/sejarah.jpeg" alt="Sejarah"> <h2>Sejarah</h2> </a>
       <a href="subjects/gkt.html" class="component-card"> <img src="images/gkt.jpg" alt="GKT"> <h2>GKT</h2> </a>
       <a href="subjects/pastyear.html" class="component-card"> <img src="images/pastyear.jpeg" alt="Past Year"> <h2>Past Year</h2> </a>
     </main>
+
+    <section id="contactus">
+      <span style="display: block; text-align: center; font-size: 60px; font-weight: bold;">
+        Contact Us
+      </span>
+    </section>
+
+    <div class="card-box">
+      <div class="card">
+          <div class="slide slide1">
+              <div class="content">
+                  <div class="icon">
+                      <i class="fa fa-user-circle" aria-hidden="true"></i>
+                  </div>
+              </div>
+          </div>
+          <div class="slide slide2">
+              <div class="content">
+                  <h3>
+                      Hello there!
+                  </h3>
+                  <p>Trust yourself and keep going.</p>
+              </div>
+          </div>
+      </div>
+    </div>
   
-    <style>
-      html {
-  scroll-behavior: smooth;
-}
 
-
-      .allsu .component-card {
-      background: white;
-      border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      padding: 1rem;
-      text-align: center;
-      transition: all 0.3s;
-      text-decoration: none;
-      color: black;
-    }
-    .component-card:hover {
-      transform: translateY(-5px);
-      transition:all 0.5s;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .component-card img {
-      width: 100%;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 0.75rem;
-      margin-bottom: 0.5rem;
-    }
-    .component-card h2 {
-      font-weight: 600;
-      font-size: 1.125rem;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      min-width: 160px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all 0.3s;
-      pointer-events: none;
-      border-radius: 0.5rem;
-    }
-
-    .dropdown:hover .dropdown-content {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .dropdown-content a {
-      color: #374151;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-content a:hover {
-      background: #f3f4f6;
-    }
-    </style>
-  
-  </div>
-    
-  
-  
-  
-  
+   
 </body>
+
 </html>
 
-<!-- 📁 subjects/chemistry.html （其余科目页面照抄此结构改名） -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chemistry Tips</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="../auth.js" defer></script>
-</head>
-<body class="bg-gray-50 text-gray-900">
-  <nav class="bg-white shadow-md p-4 flex justify-between items-center">
-  <button id="backBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">--Back</button>
-  <button id="logoutBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Log Out</button>
-  </nav>
-
-  
-</body>
-</html>
 
 <!-- 📁 auth.js 登录逻辑 (放在根目录) -->
 <script type="module">
   
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-  import {
-    getAuth,
-    signInWithPopup,
-    GoogleAuthProvider,
-    onAuthStateChanged,
-    signOut
-  } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
 
-  // ✅ Use your real config (copied from Firebase project settings)
-  const firebaseConfig = {
-    apiKey: "AIzaSyDpyzls0Qw3T-1wN7AeqFZNZN1jUu_hCFo",
-    authDomain: "behind-11a.firebaseapp.com",
-    projectId: "behind-11a",
-    storageBucket: "behind-11a.appspot.com",
-    messagingSenderId: "58433690789",
-    appId: "1:58433690789:web:06aff504b0cd6d96b1c14c"
-  };
+// Config
+const firebaseConfig = {
+  apiKey: "AIzaSyDpyzls0Qw3T-1wN7AeqFZNZN1jUu_hCFo",
+  authDomain: "behind-11a.firebaseapp.com",
+  projectId: "behind-11a",
+  storageBucket: "behind-11a.appspot.com",
+  messagingSenderId: "58433690789",
+  appId: "1:58433690789:web:06aff504b0cd6d96b1c14c"
+};
 
-  // ✅ Initialize Firebase only ONCE
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
-  // ✅ Login
-  const loginBtn = document.getElementById("loginBtn");
-  if (loginBtn) {
-    loginBtn.addEventListener("click", () => {
-      signInWithPopup(auth, provider)
-        .then((result) => {
-          const user = result.user;
-          alert(`Welcome ${user.displayName}`);
-          location.reload();
-        })
-        .catch((error) => {
-          alert("Login failed: " + error.message);
-        });
-    });
-  }
+// DOM elements
+const loginBtn = document.getElementById("loginBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+const userInfo = document.getElementById("userInfo");
+const userPic = document.getElementById("userPic");
+const welcomeModal = document.getElementById("welcomeModal");
+const welcomeText = document.getElementById("welcomeText");
+const okBtn = document.getElementById("okBtn");
 
-  // ✅ Logout (optional button with id="logoutBtn")
-  const logoutBtn = document.getElementById("logoutBtn");
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
-      signOut(auth).then(() => location.href = "index.html");
-    });
-  }
-
-  // ✅ Optional redirect if not logged in
-  onAuthStateChanged(auth, (user) => {
-    const path = window.location.pathname;
-    const isMain = path.endsWith("index.html") || path === "/";
-    if (!user && !isMain) {
-      alert("请先登录");
-      window.location.href = "index.html";
-    }
+// Login
+if (loginBtn) {
+  loginBtn.addEventListener("click", () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        showWelcomeModal(user.displayName);
+        showUser(user);
+      })
+      .catch((error) => {
+        alert("Login failed: " + error.message);
+        console.error(error);
+      });
   });
+}
+
+// Modal popup
+function showWelcomeModal(name) {
+  welcomeText.textContent = `Welcome back, ${name}!`;
+  welcomeModal.style.display = "block";
+}
+
+if (okBtn) {
+  okBtn.addEventListener("click", () => {
+    welcomeModal.style.display = "none";
+  });
+}
+
+// Show user info
+function showUser(user) {
+  if (loginBtn) loginBtn.style.display = "none";
+  if (userInfo && userPic) {
+    userInfo.style.display = "inline-block";
+    userPic.src = user.photoURL;
+  }
+}
+
+// Auth state change
+onAuthStateChanged(auth, (user) => {
+  const path = window.location.pathname;
+  const isMain = path.endsWith("index.html") || path === "/";
+  if (user) {
+    showUser(user);
+  } else if (!isMain) {
+    alert("请先登录");
+    window.location.href = "index.html";
+  }
+});
+
+// Logout (optional)
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    signOut(auth).then(() => {
+      window.location.href = "index.html";
+    });
+  });
+}
 
   
 

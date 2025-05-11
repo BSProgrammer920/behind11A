@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/subject.css">
+  <title>Akaun</title>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+  </script>
+
+  <!-- Instruction Message with Icon -->
+ <!-- Instruction Message with Icon -->
+  <div id="instruction" class="instruction-message">
+    <img src="/ionicons/information-circle-outline.svg" alt="Tips icon" class="icon-svg">
+    <p>Please click the icons at the upper right corner.</p>
+  </div>
+
+
+  <!-- Content Blocks for Tips and Resources -->
+  <div id="tips" class="content-block" style="display: none;">
+    <h2>Tips Section</h2>
+    <p>This is the Tips content.</p>
+  </div>
+  
+  <div id="resources" class="content-block" style="display: none;">
+    <h2>Resources Section</h2>
+    <p>This is the Resources content.</p>
+  </div>
+
+  <script>
+    function showContent(section) {
+      // Hide the instruction message when the user clicks on an icon
+      document.getElementById('instruction').style.display = 'none';
+
+      // Hide both sections
+      document.getElementById('tips').style.display = 'none';
+      document.getElementById('resources').style.display = 'none';
+
+      // Show the selected section
+      document.getElementById(section).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
+
+
