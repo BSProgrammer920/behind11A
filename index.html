@@ -8,220 +8,28 @@
   <link rel="stylesheet" href="styles.css">
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="auth.js" defer></script>
+  <script src="auth.js" type="module" defer></script>
 
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-
-    crossorigin="anonymous">
-  
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body class="bg-gray-50 text-gray-900">
   
-  <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: white; display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; border-bottom: 1px solid #ddd;">
-  
-    <!-- Logo on the left -->
-    <div>
-      <img src="cropped_logo.png" alt="Logo" style="height: 48px;">
-    </div>
-  
-    <!-- Right side items -->
-    <div style="display: flex; align-items: center; gap: 24px;">
+  <!-- 顶部响应式导航栏 -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
-      <!-- Nav links first -->
-      <ul style="display: flex; list-style: none; gap: 10px; margin: 0; padding: 0;">
-        <li><a href="#">Home</a></li>
-        <li><a href="motivation.html">Motivation</a></li>
-        <li><a href="#contactus">Contact Us</a></li>
-      </ul>
-  
-      <!-- Menu button after nav -->
-      <div class="dropdown">
-        <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Menu</button>
-        <div class="dropdown-content">
-          <a href="#pic">Homepage</a>
-          <a href="#subjectt">Subjects</a>
-        </div>
-      </div>
-  
-      <!-- Login button -->
-      <button id="loginBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Login with Google</button>
-  
-      <!-- User Info -->
-      <div id="userInfo" style="display: none;">
-        <img id="userPic" style="width:40px; height:40px; border-radius:50%;" />
-      </div>
-    </div>
-  </div>
-  
-  
-  <div style="padding-top: 70px;">
-  <section id="pic">
-    <div style="display: flex; justify-content: center; align-items: center; background-color: rgb(198,219,240);">
-      <img src="Welcome to.png" alt="wel">
-    </div>
-  </section>
-    
-    
-  
-    <section id="subjectt">
-      <span style="display: block; text-align: center; font-size: 60px; font-weight: bold;">
-        Subjects
-      </span>
-    </section>
+      <!-- Logo -->
+      <a href="#" class="flex items-center">
+        <img src="cropped_logo.png" alt="Logo" class="h-8 sm:h-10 w-auto object-contain">
+      </a>
 
-   <main class="p-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- 🔁 12个科目 -->
-      <a href="chemistry.html" class="component-card"> <img src="chemistry.png" alt="Chemistry"> <h2>Chemistry</h2> </a>
-      <a href="physics.html" class="component-card"> <img src="Physics.png" alt="Physics"> <h2>Physics</h2> </a>
-      <a href="bm.html" class="component-card"> <img src="bm.jpg" alt="BM"> <h2>Bahasa Melayu</h2> </a>
-      <a href="english.html" class="component-card"> <img src="English.jpg" alt="English"> <h2>English</h2> </a>
-      <a href="bc.html" class="component-card"> <img src="Bahasa Cina.jpeg" alt="BC"> <h2>Bahasa Cina</h2> </a>
-      <a href="math.html" class="component-card"> <img src="math.jpg" alt="Math"> <h2>Mathematics</h2> </a>
-      <a href="addmath.html" class="component-card"> <img src="add.jpeg" alt="AddMath"> <h2>Add Math</h2> </a>
-      <a href="akaun.html" class="component-card"> <img src="akaun.jpeg" alt="Akaun"> <h2>Akaun</h2> </a>
-      <a href="moral.html" class="component-card"> <img src="moralll.jpg" alt="Moral"> <h2>Moral</h2> </a>
-      <a href="sejarah.html" class="component-card"> <img src="sejarah.jpeg" alt="Sejarah"> <h2>Sejarah</h2> </a>
-      <a href="gkt.html" class="component-card"> <img src="gkt.jpg" alt="GKT"> <h2>GKT</h2> </a>
-      <a href="pastyear.html" class="component-card"> <img src="pastyear.jpeg" alt="Past Year"> <h2>Past Year</h2> </a>
-   </main>
-
-    <section id="contactus">
-      <span style="display: block; text-align: center; font-size: 60px; font-weight: bold;">
-        Contact Us
-      </span>
-    </section>
-
-    <div class="card-box">
-      <div class="card">
-          <div class="slide slide1">
-              <div class="content">
-                  <div class="icon">
-                      <i class="fa fa-user-circle" aria-hidden="true"></i>
-                  </div>
-              </div>
-          </div>
-          <div class="slide slide2">
-              <div class="content">
-                  <h3>
-                      Hello there!
-                  </h3>
-                  <p>Trust yourself and keep going.</p>
-              </div>
-          </div>
-      </div>
-    </div>
-  
-
-   <!-- 欢迎弹窗结构 -->
-  <div id="welcomeModal" style="display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 9999; display: none; align-items: center; justify-content: center;">
-    <div style="background: white; padding: 28px 36px; border-radius: 12px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); min-width: 260px;">
-      <h3 id="welcomeText" style="font-size: 20px; font-weight: bold; margin-bottom: 20px; color: #1f2937;"></h3>
-      <button id="okBtn" style="background-color: #3b82f6; color: white; padding: 8px 24px; border-radius: 6px; font-weight: 500; cursor: pointer; border: none;">
-        OK
-      </button>
-    </div>
-  </div>
-</body>
-
-</html>
-
-
-<!-- 📁 auth.js 登录逻辑 (放在根目录) -->
-<script type="module">
-  
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  signOut
-} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
-
-// Config
-const firebaseConfig = {
-  apiKey: "AIzaSyDpyzls0Qw3T-1wN7AeqFZNZN1jUu_hCFo",
-  authDomain: "behind-11a.firebaseapp.com",
-  projectId: "behind-11a",
-  storageBucket: "behind-11a.appspot.com",
-  messagingSenderId: "58433690789",
-  appId: "1:58433690789:web:06aff504b0cd6d96b1c14c"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
-
-// DOM elements
-const loginBtn = document.getElementById("loginBtn");
-const logoutBtn = document.getElementById("logoutBtn");
-const userInfo = document.getElementById("userInfo");
-const userPic = document.getElementById("userPic");
-const welcomeModal = document.getElementById("welcomeModal");
-const welcomeText = document.getElementById("welcomeText");
-const okBtn = document.getElementById("okBtn");
-
-// Login
-if (loginBtn) {
-  loginBtn.addEventListener("click", () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        showWelcomeModal(user.displayName);
-        showUser(user);
-      })
-      .catch((error) => {
-        alert("Login failed: " + error.message);
-        console.error(error);
-      });
-  });
-}
-
-// Modal popup
-function showWelcomeModal(name) {
-  welcomeText.textContent = `Welcome back, ${name}!`;
-  welcomeModal.style.display = "block";
-}
-
-if (okBtn) {
-  okBtn.addEventListener("click", () => {
-    welcomeModal.style.display = "none";
-  });
-}
-
-// Show user info
-function showUser(user) {
-  if (loginBtn) loginBtn.style.display = "none";
-  if (userInfo && userPic) {
-    userInfo.style.display = "inline-block";
-    userPic.src = user.photoURL;
-  }
-}
-
-// Auth state change
-onAuthStateChanged(auth, (user) => {
-  const path = window.location.pathname;
-  const isMain = path.endsWith("index.html") || path === "/";
-  if (user) {
-    showUser(user);
-  } else if (!isMain) {
-    alert("请先登录");
-    window.location.href = "index.html";
-  }
-});
-
-// Logout (optional)
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", () => {
-    signOut(auth).then(() => {
-      window.location.href = "index.html";
-    });
-  });
-}
-
-  
-
-</script>
-
+      <!-- 右侧导航与操作区 -->
+      <div class="flex items-center gap-2 sm:gap-6">
+        
+        <!-- 桌面端常规导航链接（手机端隐藏） -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+          <a href="#" class="hover:text-blue-600 transition-colors">Home</a>
+          <a href="motivation.html" class="hover:text-blue-600 transition-colors">Motivation</a>
+          <a href="#contactus"
