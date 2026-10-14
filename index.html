@@ -32,4 +32,118 @@
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
           <a href="#" class="hover:text-blue-600 transition-colors">Home</a>
           <a href="motivation.html" class="hover:text-blue-600 transition-colors">Motivation</a>
-          <a href="#contactus"
+          <a href="#contactus" class="hover:text-blue-600 transition-colors">Contact Us</a>
+        </nav>
+
+        <!-- 菜单下拉框 -->
+        <div class="relative">
+          <button id="menuDropdownBtn" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs sm:text-sm px-3 py-1.5 sm:py-2 rounded-lg font-medium transition-colors">
+            Menu
+          </button>
+          <div id="menuDropdownList" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 md:hidden">Home</a>
+            <a href="motivation.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 md:hidden">Motivation</a>
+            <a href="#pic" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Homepage</a>
+            <a href="#subjectt" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Subjects</a>
+            <a href="#contactus" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- 登录按钮（手机端自动简写为 Login，电脑端显示 Login with Google） -->
+        <button id="loginBtn" class="bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg transition-colors whitespace-nowrap">
+          <span class="sm:hidden">Login</span>
+          <span class="hidden sm:inline">Login with Google</span>
+        </button>
+
+        <!-- 用户头像区 -->
+        <div id="userInfo" style="display: none;">
+          <img id="userPic" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover ring-2 ring-blue-500" />
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <div class="pt-16">
+    <section id="pic">
+      <div class="flex justify-center items-center p-4" style="background-color: rgb(198,219,240);">
+        <img src="Welcome to.png" alt="wel" class="max-w-full h-auto object-contain">
+      </div>
+    </section>
+    
+    <section id="subjectt" class="py-8">
+      <span class="block text-center text-4xl sm:text-6xl font-bold">
+        Subjects
+      </span>
+    </section>
+
+    <main class="p-4 sm:p-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
+      <!-- 🔁 12个科目 -->
+      <a href="chemistry.html" class="component-card"> <img src="chemistry.png" alt="Chemistry"> <h2>Chemistry</h2> </a>
+      <a href="physics.html" class="component-card"> <img src="Physics.png" alt="Physics"> <h2>Physics</h2> </a>
+      <a href="bm.html" class="component-card"> <img src="bm.jpg" alt="BM"> <h2>Bahasa Melayu</h2> </a>
+      <a href="english.html" class="component-card"> <img src="English.jpg" alt="English"> <h2>English</h2> </a>
+      <a href="bc.html" class="component-card"> <img src="Bahasa Cina.jpeg" alt="BC"> <h2>Bahasa Cina</h2> </a>
+      <a href="math.html" class="component-card"> <img src="math.jpg" alt="Math"> <h2>Mathematics</h2> </a>
+      <a href="addmath.html" class="component-card"> <img src="add.jpeg" alt="AddMath"> <h2>Add Math</h2> </a>
+      <a href="akaun.html" class="component-card"> <img src="akaun.jpeg" alt="Akaun"> <h2>Akaun</h2> </a>
+      <a href="moral.html" class="component-card"> <img src="moralll.jpg" alt="Moral"> <h2>Moral</h2> </a>
+      <a href="sejarah.html" class="component-card"> <img src="sejarah.jpeg" alt="Sejarah"> <h2>Sejarah</h2> </a>
+      <a href="gkt.html" class="component-card"> <img src="gkt.jpg" alt="GKT"> <h2>GKT</h2> </a>
+      <a href="pastyear.html" class="component-card"> <img src="pastyear.jpeg" alt="Past Year"> <h2>Past Year</h2> </a>
+    </main>
+
+    <section id="contactus" class="py-8">
+      <span class="block text-center text-4xl sm:text-6xl font-bold">
+        Contact Us
+      </span>
+    </section>
+
+    <div class="card-box">
+      <div class="card">
+        <div class="slide slide1">
+          <div class="content">
+            <div class="icon">
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide2">
+          <div class="content">
+            <h3>Hello there!</h3>
+            <p>Trust yourself and keep going.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 欢迎弹窗结构 -->
+  <div id="welcomeModal" style="display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="background: white; padding: 28px 36px; border-radius: 12px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); min-width: 260px; max-width: 90%; margin: auto;">
+      <h3 id="welcomeText" style="font-size: 20px; font-weight: bold; margin-bottom: 20px; color: #1f2937;"></h3>
+      <button id="okBtn" style="background-color: #3b82f6; color: white; padding: 8px 24px; border-radius: 6px; font-weight: 500; cursor: pointer; border: none;">
+        OK
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu 按钮点击交互脚本 -->
+  <script>
+    const menuDropdownBtn = document.getElementById('menuDropdownBtn');
+    const menuDropdownList = document.getElementById('menuDropdownList');
+
+    if (menuDropdownBtn && menuDropdownList) {
+      menuDropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuDropdownList.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!menuDropdownList.contains(e.target) && e.target !== menuDropdownBtn) {
+          menuDropdownList.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
