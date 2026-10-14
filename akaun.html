@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 去掉开头的 / -->
-  <link rel="stylesheet" href="subject.css">
+  <link rel="stylesheet" href="/subject.css">
   <title>Akaun</title>
 </head>
 <body>
   <div id="header-placeholder"></div>
   <script>
-    // 直接读取同目录下的 header.html
-    fetch("header.html")
+    fetch("../components/header.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("header-placeholder").innerHTML = data;
@@ -19,11 +17,12 @@
   </script>
 
   <!-- Instruction Message with Icon -->
+ <!-- Instruction Message with Icon -->
   <div id="instruction" class="instruction-message">
-    <!-- 直接引用同目录的 svg 文件 -->
-    <img src="information-circle-outline.svg" alt="Tips icon" class="icon-svg">
+    <img src="/ionicons/information-circle-outline.svg" alt="Tips icon" class="icon-svg">
     <p>Please click the icons at the upper right corner.</p>
   </div>
+
 
   <!-- Content Blocks for Tips and Resources -->
   <div id="tips" class="content-block" style="display: none;">
@@ -38,11 +37,18 @@
 
   <script>
     function showContent(section) {
+      // Hide the instruction message when the user clicks on an icon
       document.getElementById('instruction').style.display = 'none';
+
+      // Hide both sections
       document.getElementById('tips').style.display = 'none';
       document.getElementById('resources').style.display = 'none';
+
+      // Show the selected section
       document.getElementById(section).style.display = 'block';
     }
   </script>
 </body>
 </html>
+
+
