@@ -1,21 +1,22 @@
-<!-- 📁 index.html 主页面 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Behind 11A+</title>
-  <link rel="stylesheet" href="style.css">
   
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  <!-- 本地样式文件（若仓库只有 style.css，保留此项即可） -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
 
+  <!-- 图标库 -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body class="bg-gray-50 text-gray-900">
-  
-  <!-- 顶部响应式导航栏 -->
+
+  <!-- 响应式导航栏 -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
@@ -24,44 +25,46 @@
         <img src="cropped_logo.png" alt="Logo" class="h-8 sm:h-10 w-auto object-contain">
       </a>
 
-      <!-- 右侧导航与操作区 -->
+      <!-- 右侧区域 -->
       <div class="flex items-center gap-2 sm:gap-6">
         
-        <!-- 桌面端常规导航链接（手机端隐藏） -->
+        <!-- 电脑端常规链接 (手机端自动隐藏 hidden) -->
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
           <a href="#" class="hover:text-blue-600 transition-colors">Home</a>
           <a href="motivation.html" class="hover:text-blue-600 transition-colors">Motivation</a>
           <a href="#contactus" class="hover:text-blue-600 transition-colors">Contact Us</a>
         </nav>
 
-        <!-- 菜单下拉框 -->
+        <!-- 手机端下拉菜单 -->
         <div class="relative">
-          <button id="menuDropdownBtn" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs sm:text-sm px-3 py-1.5 sm:py-2 rounded-lg font-medium transition-colors">
+          <button id="mobileMenuBtn" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs sm:text-sm px-3 py-1.5 sm:py-2 rounded-lg font-medium transition-colors">
             Menu
           </button>
-          <div id="menuDropdownList" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
+          <div id="mobileMenuList" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 md:hidden">Home</a>
             <a href="motivation.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 md:hidden">Motivation</a>
-            <a href="#pic" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Homepage</a>
+            <a href="#pic" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Banner</a>
             <a href="#subjectt" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Subjects</a>
             <a href="#contactus" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Contact Us</a>
           </div>
         </div>
 
-        <!-- 登录按钮（手机端自动简写为 Login，电脑端显示 Login with Google） -->
+        <!-- 登录按钮 -->
         <button id="loginBtn" class="bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg transition-colors whitespace-nowrap">
           <span class="sm:hidden">Login</span>
           <span class="hidden sm:inline">Login with Google</span>
         </button>
 
-        <!-- 用户头像区 -->
+        <!-- 登录后头像 -->
         <div id="userInfo" style="display: none;">
           <img id="userPic" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover ring-2 ring-blue-500" />
         </div>
+
       </div>
     </div>
   </header>
-  
+
+  <!-- 页面主体容器（使用 pt-16 抵消固定导航高度） -->
   <div class="pt-16">
     <section id="pic">
       <div class="flex justify-center items-center p-4" style="background-color: rgb(198,219,240);">
@@ -69,7 +72,7 @@
       </div>
     </section>
     
-    <section id="subjectt" class="py-8">
+    <section id="subjectt" class="py-6">
       <span class="block text-center text-4xl sm:text-6xl font-bold">
         Subjects
       </span>
@@ -91,7 +94,7 @@
       <a href="pastyear.html" class="component-card"> <img src="pastyear.jpeg" alt="Past Year"> <h2>Past Year</h2> </a>
     </main>
 
-    <section id="contactus" class="py-8">
+    <section id="contactus" class="py-6">
       <span class="block text-center text-4xl sm:text-6xl font-bold">
         Contact Us
       </span>
@@ -126,20 +129,101 @@
     </div>
   </div>
 
-  <!-- Menu 按钮点击交互脚本 -->
-  <script>
-    const menuDropdownBtn = document.getElementById('menuDropdownBtn');
-    const menuDropdownList = document.getElementById('menuDropdownList');
+  <!-- 脚本逻辑（直接内置于 body 底部，无需外链 auth.js） -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+    import {
+      getAuth,
+      signInWithPopup,
+      GoogleAuthProvider,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
 
-    if (menuDropdownBtn && menuDropdownList) {
-      menuDropdownBtn.addEventListener('click', (e) => {
+    // 1. Firebase 配置
+    const firebaseConfig = {
+      apiKey: "AIzaSyDpyzls0Qw3T-1wN7AeqFZNZN1jUu_hCFo",
+      authDomain: "behind-11a.firebaseapp.com",
+      projectId: "behind-11a",
+      storageBucket: "behind-11a.appspot.com",
+      messagingSenderId: "58433690789",
+      appId: "1:58433690789:web:06aff504b0cd6d96b1c14c"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    // DOM 元素
+    const loginBtn = document.getElementById("loginBtn");
+    const userInfo = document.getElementById("userInfo");
+    const userPic = document.getElementById("userPic");
+    const welcomeModal = document.getElementById("welcomeModal");
+    const welcomeText = document.getElementById("welcomeText");
+    const okBtn = document.getElementById("okBtn");
+
+    // 2. 登录点击
+    if (loginBtn) {
+      loginBtn.addEventListener("click", () => {
+        signInWithPopup(auth, provider)
+          .then((result) => {
+            const user = result.user;
+            showWelcomeModal(user.displayName);
+            showUser(user);
+          })
+          .catch((error) => {
+            alert("Login failed: " + error.message);
+            console.error(error);
+          });
+      });
+    }
+
+    // 3. 弹窗控制
+    function showWelcomeModal(name) {
+      if (welcomeText && welcomeModal) {
+        welcomeText.textContent = `Welcome back, ${name}!`;
+        welcomeModal.style.display = "flex";
+      } else {
+        alert(`Welcome back, ${name}!`);
+      }
+    }
+
+    if (okBtn) {
+      okBtn.addEventListener("click", () => {
+        if (welcomeModal) {
+          welcomeModal.style.display = "none";
+        }
+      });
+    }
+
+    // 4. 显示头像
+    function showUser(user) {
+      if (loginBtn) loginBtn.style.display = "none";
+      if (userInfo && userPic) {
+        userInfo.style.display = "inline-block";
+        userPic.src = user.photoURL;
+      }
+    }
+
+    // 5. 监听登录状态
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        showUser(user);
+      }
+    });
+
+    // 6. 手机端 Menu 下拉交互
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenuList = document.getElementById('mobileMenuList');
+
+    if (mobileMenuBtn && mobileMenuList) {
+      mobileMenuBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        menuDropdownList.classList.toggle('hidden');
+        mobileMenuList.classList.toggle('hidden');
       });
 
       document.addEventListener('click', (e) => {
-        if (!menuDropdownList.contains(e.target) && e.target !== menuDropdownBtn) {
-          menuDropdownList.classList.add('hidden');
+        if (!mobileMenuList.contains(e.target) && e.target !== mobileMenuBtn) {
+          mobileMenuList.classList.add('hidden');
         }
       });
     }
