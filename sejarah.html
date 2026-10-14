@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/subject.css">
-  <title>Akaun</title>
+  <link rel="stylesheet" href="subject.css">
+  <title>Sejarah</title>
 </head>
 <body>
   <div id="header-placeholder"></div>
   <script>
-    fetch("../components/header.html")
+    fetch("components/header.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("header-placeholder").innerHTML = data;
@@ -19,7 +19,7 @@
   <!-- Instruction Message with Icon -->
  <!-- Instruction Message with Icon -->
   <div id="instruction" class="instruction-message">
-    <img src="/ionicons/information-circle-outline.svg" alt="Tips icon" class="icon-svg">
+    <img src="ionicons/information-circle-outline.svg" alt="Tips icon" class="icon-svg">
     <p>Please click the icons at the upper right corner.</p>
   </div>
 
